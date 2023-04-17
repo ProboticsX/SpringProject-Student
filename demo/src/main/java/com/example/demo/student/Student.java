@@ -22,7 +22,9 @@ public class Student {
     public void setId(long id) {
         this.id = id;
     }
+    public Student(){
 
+    }
     public Student(long id, String name, int age) {
         this.id = id;
         this.name = name;
