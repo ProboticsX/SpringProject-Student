@@ -2,6 +2,9 @@ package com.example.demo.student;
 
 import jakarta.persistence.*;
 
+import java.time.LocalDate;
+
+//SequenceGenerator is responsible for creating DB in Postgresql
 @Entity
 @Table
 public class Student {
@@ -17,6 +20,7 @@ public class Student {
     )
     private long id;
     private String name;
+    private LocalDate dob;
     private int age;
 
     public void setId(long id) {
@@ -25,10 +29,11 @@ public class Student {
     public Student(){
 
     }
-    public Student(long id, String name, int age) {
+    public Student(long id, String name, int age, LocalDate dob) {
         this.id = id;
         this.name = name;
         this.age = age;
+        this.dob = dob;
     }
 
     public void setName(String name) {
@@ -49,5 +54,12 @@ public class Student {
 
     public int getAge() {
         return age;
+    }
+    public LocalDate getDob() {
+        return dob;
+    }
+
+    public void setDob(LocalDate dob) {
+        this.dob = dob;
     }
 }
