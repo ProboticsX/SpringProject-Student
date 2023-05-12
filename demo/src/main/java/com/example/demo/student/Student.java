@@ -23,6 +23,16 @@ public class Student {
     private String name;
     private LocalDate dob;
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    private String email;
+
     //use of Transient to calculate age on its own
     //no longer in db but you can view age in API
     @Transient
@@ -34,9 +44,10 @@ public class Student {
     public Student(){
 
     }
-    public Student(long id, String name, LocalDate dob) {
+    public Student(long id, String name, String email, LocalDate dob) {
         this.id = id;
         this.name = name;
+        this.email = email;
         this.dob = dob;
     }
 
